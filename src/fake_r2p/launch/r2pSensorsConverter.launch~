@@ -1,0 +1,5 @@
+<launch>
+  <!-- run the odometryConverter node -->
+  <node pkg="odometryConverter" name="filter" type="odometryConverter_node" output="screen">
+  </node>
+</launch>

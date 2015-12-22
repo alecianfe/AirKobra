@@ -1,0 +1,44 @@
+#include <ros/ros.h>
+#include <string>
+#include <geometry_msgs/Vector3.h>
+#include <geometry_msgs/Twist.h>
+#include <sensor_msgs/Imu.h>
+#include <nav_msgs/Odometry.h>
+#include <r2p_msgs/ImuRaw.h>
+
+class r2pSensorsConverter{
+
+public:
+
+
+ros::NodeHandle mNodeHandler;
+
+geometry_msgs::Vector3 odometryR2p;
+geometry_msgs::Vector3 imuR2p;
+
+  ros::Publisher odomPub;	
+  ros::Publisher imuPub;
+ ros::Subscriber odomSub;
+  ros::Subscriber imuSub;
+
+
+
+
+bool init();
+
+void run();
+
+r2pSensorsConverter();
+
+
+void odomCB(const geometry_msgs::Vector3& msg);
+
+void imuCB(const r2p_msgs::ImuRaw& msg);
+
+void convertOdometryR2ptoRos(nav_msgs::Odometry& RosStandardOdometry);
+
+void convertImuR2ptoRos(sensor_msgs::Imu& RosStandardImu);
+
+
+};
+

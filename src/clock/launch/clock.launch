@@ -1,0 +1,5 @@
+<launch>
+  <!-- run the clock node -->
+  <node pkg="clock" name="clock" type="vrep_clock_remapper" output="screen">
+  </node>
+</launch>

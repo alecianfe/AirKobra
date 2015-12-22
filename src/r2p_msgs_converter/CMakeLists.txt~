@@ -1,0 +1,52 @@
+cmake_minimum_required(VERSION 2.8.3)
+project(r2pSensorsConverter)
+
+## Find catkin macros and libraries
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  geometry_msgs
+  nav_msgs
+  sensor_msgs
+  message_generation
+)
+
+
+set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
+
+set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_MULTITHREADED ON)
+set(Boost_USE_STATIC_RUNTIME OFF)
+
+
+###################################
+## catkin specific configuration ##
+###################################
+catkin_package(CATKIN_DEPENDS   
+  geometry_msgs
+  nav_msgs
+  sensor_msgs
+  message_runtime)
+
+###########
+## Build ##
+###########
+
+include_directories(include
+  ${Boost_INCLUDE_DIRS}
+)
+
+add_executable (r2pSensorsConverter_node
+	src/main.cpp
+	src/r2pSensorsConverter.cpp
+)
+
+#############
+## Install ##
+#############
+
+# Install launch files
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  PATTERN ".svn" EXCLUDE
+)
+  

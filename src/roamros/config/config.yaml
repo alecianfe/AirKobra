@@ -1,0 +1,26 @@
+
+solver:
+  base_link_frame_id: /roamfree
+  global_frame_id: /world
+  low_level_logging : False
+  pose_window_length: 0.5
+  dead_reckoning: True  
+  frequency: 10.0
+  n_gauss_newton_iterations: 5
+
+sensors:
+  'Odometry':
+    type: GenericOdometer
+    is_master: True
+    frame_id: /roamfree
+    topic: /base_odometry/odom
+    topic_type: nav_msgs/Odometry
+    use_header_stamp: True
+    static_covariance: True
+    covariance: [ 1.0e-2,  1.0e-4,        0.0,        0.0,        0.0,        1.0e-4,
+                  1.0e-4,  1.0e-2,        0.0,        0.0,        0.0,        1.0e-4,
+                  0.0,        0.0,     1.0e-6,        0.0,        0.0,        0.0,
+                  0.0,        0.0,        0.0,     1.0e-6,        0.0,        0.0,
+                  0.0,        0.0,        0.0,        0.0,     1.0e-6,        0.0,
+                  1.0e-4,  1.0e-4,        0.0,        0.0,        0.0,        1.0e-2]
+

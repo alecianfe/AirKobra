@@ -1,0 +1,20 @@
+/*
+ * r2pSensorsConverter.h
+ *
+ *  Created on: Dec 13, 2015
+ *      Author: De Angelis
+ */
+
+#ifndef R2PSENSORSCONVERTER_H_
+#define R2PSENSORSCONVERTER_H_
+
+#include <ros/ros.h>
+
+#include <sstream>
+
+
+namespace r2pSensorsConverter{
+
+
+
+}

@@ -1,0 +1,5 @@
+<launch>
+  <!-- run the r2p_msgs_converter node -->
+  <node pkg="r2p_msgs_converter" name="r2p_msgs_converter" type="r2p_msgs_converter_node" output="screen">
+  </node>
+</launch>
